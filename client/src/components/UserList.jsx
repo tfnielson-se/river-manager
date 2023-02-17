@@ -29,11 +29,8 @@ const UserList = ({ users, onSetNewCurrentUser, currentUser }) => {
 											scope="col"
 											class="py-3.5 px-4 text-sm font-normal rtl:text-right text-gray-500 dark:text-gray-400"
 										>
-											<div class="flex items-center gap-x-3">
-												<div class="flex items-center gap-x-2">
+
 													<span>ID #</span>
-												</div>
-											</div>
 										</th>
 
 										<th

@@ -27,11 +27,9 @@ const EmployeeDetails = ({ users, onUpdateDeletedUsers }) => {
 											scope="col"
 											class="py-3.5 px-4 text-sm font-normal rtl:text-right text-gray-500 dark:text-gray-400"
 										>
-											<div class="flex items-center gap-x-3">
-												<div class="flex items-center gap-x-2">
+
 													<span>ID #</span>
-												</div>
-											</div>
+
 										</th>
 
 										<th
@@ -59,14 +57,14 @@ const EmployeeDetails = ({ users, onUpdateDeletedUsers }) => {
 											scope="col"
 											class="px-4 py-3.5 text-sm font-normal rtl:text-right text-gray-500 dark:text-gray-400"
 										>
-											Purchase
+											Season Total Income
 										</th>
 
 										<th
 											scope="col"
-											class="relative py-3.5 px-4"
+											class="px-4 py-3.5 text-sm font-normal rtl:text-right text-gray-500 dark:text-gray-400"
 										>
-											<span class="sr-only">Actions</span>
+										Actions
 										</th>
 									</tr>
 								</thead>

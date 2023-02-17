@@ -18,7 +18,7 @@ import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import UserList from "./components/UserList";
-import UserDetails from "./components/UserDetails";
+import UserProfile from "./components/UserProfile";
 import JobLog from "./components/JobLog";
 import NewUserForm from "./components/NewUserForm";
 import EditEmployee from "./components/EditEmployee";
@@ -34,7 +34,6 @@ function App() {
 			.then((r) => r.json())
 			.then((userData) => {
 				setUsers(userData);
-				setCurrentUser(userData[0]);
 			});
 	}, []);
 
@@ -88,7 +87,7 @@ function App() {
 				/>
 				<Route
 					path="/employees/:id"
-					element={<UserDetails currentUser={currentUser} />}
+					element={<UserProfile currentUser={currentUser} />}
 				/>
 				<Route path="/employees/:id/joblog" element={<JobLog />} />
 				<Route

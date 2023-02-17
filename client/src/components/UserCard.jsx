@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import boss from "../img/boss.png";
-import employee from "../img/employee.png";
 
 const UserCard = ({ user, onSetNewCurrentUser, currentUser }) => {
 	console.log("UserCard.jsx");
@@ -10,8 +8,6 @@ const UserCard = ({ user, onSetNewCurrentUser, currentUser }) => {
 	const selectEmployee = () => {
 		onSetNewCurrentUser(user);
 	};
-
-	const avatarDisplay = user.is_admin ? boss : employee;
 
 	return (
 		<tr>
@@ -31,47 +27,20 @@ const UserCard = ({ user, onSetNewCurrentUser, currentUser }) => {
 				</div>
 			</td>
 			<td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-				<div className="flex items-center gap-x-2">
-					<div>
-						<Link
-							to={`/employees/${user.id}`}
-							href="#"
-							class="block text-xl font-bold text-gray-800 dark:text-black"
-							tabindex="0"
-							role="link"
-							onClick={selectEmployee}
-						>
-							<button className="text-sm font-medium text-gray-800 dark:text-white ">
-								{first_name} {last_name}
-							</button>
-						</Link>
-					</div>
-				</div>
+				<Link
+					to={`/employees/${user.id}`}
+					href="#"
+
+					tabindex="0"
+					role="link"
+					onClick={selectEmployee}
+				>
+					<button className="inline-flex items-center px-3 py-1 rounded-md gap-x-2 text-gray-300 bg-emerald-100/60 dark:bg-gray-800 text-sm font-normal capitalize">
+						{first_name} {last_name}
+					</button>
+				</Link>
 			</td>
 		</tr>
-		// <div class="w-half max-w-xs overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-2 mx-2">
-		// 	<img
-		// 		class="object-cover w-full h-56"
-		// 		src={avatarDisplay}
-		// 		alt="avatar"
-		// 	/>
-
-		// 	<div class="py-5 text-center">
-		// 		<Link
-		// 			to={`/employees/${user.id}`}
-		// 			href="#"
-		// 			class="block text-xl font-bold text-gray-800 dark:text-black"
-		// 			tabindex="0"
-		// 			role="link"
-		// 			onClick={selectEmployee}
-		// 		>
-		// 			{first_name} {last_name}
-		// 		</Link>
-		// 		<span className="badge badge-lg bg-slate-400 text-black capitalize">
-		// 			{is_admin ? "admin" : "guide"}
-		// 		</span>
-		// 	</div>
-		// </div>
 	);
 };
 

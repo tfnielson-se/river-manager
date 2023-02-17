@@ -3,24 +3,24 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const EmployeeRow = ({ user, onUpdateDeletedUsers }) => {
-    const [earnigns, setEarnigns] = useState("")
+	const [earnigns, setEarnigns] = useState("");
 	const { id, first_name, last_name, is_admin, is_employee } = user;
-    const navigation = useNavigate()
+	const navigation = useNavigate();
 
 	const handleDeleteUser = () => {
-        console.log(id)
+		console.log(id);
 		// DELETE
 		fetch(`http://127.0.0.1:3000/users/${id}`, {
 			method: "DELETE",
 		});
-        onUpdateDeletedUsers(user)
+		onUpdateDeletedUsers(user);
 	};
 
-    useEffect(()=>{
-        fetch(`http://127.0.0.1:3000/users/${id}/total_earnings`)
-        .then(r => r.json())
-        .then(data => setEarnigns(data))
-    },[])
+	useEffect(() => {
+		fetch(`http://127.0.0.1:3000/users/${id}/total_earnings`)
+			.then((r) => r.json())
+			.then((data) => setEarnigns(data));
+	}, []);
 
 	return (
 		<tr>
@@ -30,24 +30,19 @@ const EmployeeRow = ({ user, onUpdateDeletedUsers }) => {
 				</div>
 			</td>
 			<td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-				Jan 6, 2022
+				Feb 13, 2023
 			</td>
 			<td className="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
 				<div className="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800">
 					<h2 className="text-sm font-normal capitalize">
-							{is_admin ? "admin" : "guide"}
-						</h2>
+						{is_admin ? "admin" : "guide"}
+					</h2>
 				</div>
 			</td>
 			<td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
-				<div className="flex items-center gap-x-2">
-					<div>
-						<h2 className="text-sm font-medium text-gray-800 dark:text-white ">
-							{first_name} {last_name}
-						</h2>
-						
-					</div>
-				</div>
+				<h2 className="text-sm font-medium text-gray-800 dark:text-white ">
+					{first_name} {last_name}
+				</h2>
 			</td>
 			<td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">
 				${earnigns}
@@ -62,7 +57,7 @@ const EmployeeRow = ({ user, onUpdateDeletedUsers }) => {
 
 					<button
 						onClick={handleDeleteUser}
-						className="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none"
+						className="text-red-500 transition-colors duration-200 hover:border-red-500 focus:outline-none"
 					>
 						Delete
 					</button>
