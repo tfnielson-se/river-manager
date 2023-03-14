@@ -1,27 +1,14 @@
 # README
+## to open project
+fork and download github repo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+in terminal
+## $ cd /path/to/download (ie. cd /Downloads/river-manager)
 
-Things you may want to cover:
+next, in terminal, 
+start RoR server
+## $ rails s 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# river-manager
-# job-manager
-# job-manager
+next, in terminal,
+start Vite/React server
+## $ npm run dev
